@@ -1,4 +1,4 @@
-import { AsyncStorage } from "react-native";
+import {AsyncStorage} from 'react-native';
 
 export const AUTHENTICATE = "AUTHENTICATE";
 export const LOGOUT = "LOGOUT";
@@ -88,8 +88,8 @@ export const login = (email, password) => {
     return { type: LOGOUT }
   }
 
-  const saveDataToStorage = (token, userId, expirationDate) => {
-    AsyncStorage.setItem('userData', JSON.stringify({
+  const saveDataToStorage = async (token, userId, expirationDate) => {
+    await AsyncStorage.setItem('userData', JSON.stringify({
       token: token,
       userId: userId,
       expirationDate: expirationDate.toISOString(),
