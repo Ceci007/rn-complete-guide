@@ -69,7 +69,7 @@ const ProductsOverviewScreen = (props) => {
   if(!isLoading && products.length === 0) {
     return (
       <View style={styles.centered}>
-        <Text>No products found. Maybe you should start adding some.</Text>
+        <Text style={{marginHorizontal: 15, textAlign: "center"}}>No products found. Maybe you should start adding some.</Text>
       </View>
     )
   }
@@ -79,7 +79,7 @@ const ProductsOverviewScreen = (props) => {
       onRefresh={loadProducts}
       refreshing={isRefreshing}
       data={products}
-      keyExtractor={(item) => item.id}
+      keyExtractor={(item) => item.ownerId}
       renderItem={(itemData) => (
         <ProductItem
           image={itemData.item.imageUrl}

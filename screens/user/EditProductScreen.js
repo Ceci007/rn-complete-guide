@@ -96,7 +96,7 @@ const EditProductScreen = (props) => {
     } catch(err) {
       setError(err.message);
     }
-    isLoading(false);
+    setIsLoading(false);
   }, [dispatch, prodId, formState]);
 
   useEffect(() => {
